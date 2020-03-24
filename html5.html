@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <!-- <video height="" width="" controls autoplay>
+    <source src="video_sample.mp4" type="video/mp4" \>
+      <source src="video_sample.ogg" type="video/ogg" \>
+        Not support video
+  </video> -->
+  
+  <!-- <audio src="audio_sample.mp3" controls autoplay>
+    
+  </audio> -->
+
+  <!-- <audio controls autoplay>
+    <source src="audio_sample.mp3" type="audio/mpeg">
+      <source src="audio_sample.ogg" type="audio/ogg">
+        Not support audio
+  </audio> -->
+
+  <!-- Web Storage -->
+  <!-- có 2 nơi lưu trữ đó là: session storage và local storage giải quyết khác nhau-->
+  <!-- sessionStorage: giới hạn một cửa sổ hoặc thẻ của trình duyệt, một trang web 
+  được mở trong 2 thẻ của cũng một trình duyệt cũng kkhoong thể
+truy xuất dữ liệu lẫn nhau, khi đó bạn đóng trang web 
+thì dữ liệu trong sessionStorage hiện tại cũng bị xóa. -->
+<!-- localStorage: có thể truy xuất lẫn nhau giữa các của sổ trình duyệt
+Dữ liệu sẽ được lưu trữ không giớn hạn thời gian. -->
+
+<!-- Tìm hiểu sessionStorage
+<script type="text/javascript">
+  if( sessionStorage.hits ){
+    // tăng số hits sau mỗi truy cập
+    sessionStorage.hits = Number(sessionStorage.hits) + 1;
+  } else{
+    // nếu chưa truy cập lần nào thì gán giá trị 1
+    sessionStorage.hits = 1;
+  }
+  document.write("Số Hits : " + sessionStorage.hits);
+</script>
+<p>Refresh trang web để tăng số hits.</p>
+<p>Đónh của sổ, sau đó mở lại để kiểm tra kết quả</p> -->
+
+<!-- Tìm hiểu Local Storage
+<script type="text/javascript">
+  if( localStorage.hits ){
+    // tăng số hits sau mỗi truy cập
+    localStorage.hits = Number(localStorage.hits) + 1;
+  } else{
+    // nếu chưa truy cập lần nào thì gán giá trị 1
+    localStorage.hits = 1;
+  }
+  document.write("Số Hits : " + localStorage.hits);
+</script> -->
+
+<!-- Học về canvas -->
+<!-- học về Geolocation -->
+<div id="demo"></div>
+<button onclick="getLocation()">Get Location</button>
+<script>
+  // lấy đối tượng thẻ div.demo
+  var x = document.getElementById("demo");
+
+  // lấy toạn độ hiện tại
+  function getLocation() {
+    navigator.geolocation.getCurrentPosition(showPosition2);
+  }
+  function showPosition(position) {
+    x.innerHTML = "latitude: " + position.coords.latitude + 
+    "<br /> Longitude: " + position.coords.longitude;
+  }
+</script>
+</body>
+</html>
